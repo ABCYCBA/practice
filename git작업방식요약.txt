@@ -1,0 +1,11 @@
+git 협업을 고려한 작업방식
+- 작업시작시 git pull origin master, 원격저장소 브랜치 내용 가져와 로컬저장소에 동기화(원격에 변경사항이 있을수 있으므로)
+- git switch -c feature/main-ui, 새로운 작업시 기능관련 브랜치 생성후 이동
+
+작업완료후 커밋시작시
+- 깃헙에 이슈추가(커스텀 이슈템플릿 사용)
+- git add . 작업완료후 변경사항 스테이지 추가
+- git commit 로컬저장소에 이슈번호붙여서 커밋
+- git push origin feature/main-ui, 원격저장소에 push
+- PR(pull request템플릿 사용) 생성후 내용에 resolve: #이슈번호 넣으면 머지된후 해당이슈 자동으로 close됨
+- git switch master로 이동후 git branch -D 브랜치명, 작업완료된 브랜치 삭제
